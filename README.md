@@ -159,7 +159,7 @@ These quick exploratory views show that the data supports each question. Fitted 
 
 - The CSV has missing values (including Earnings/Share, Price, and P/E), so sample sizes differ by question.
 - The data is one snapshot, so we cannot infer cause and effect.
-- Differences between industries and a few extreme financial values may influence the results. We will discuss these limitations rather than treating any relationship as universal.
+- Differences between industries and a few extreme financial values may influence the results. We will discuss these limitations instead of treating any relationship as universal.
 
 *Screenshots of key code, block diagrams, and the top-level script will be added in the coming phases.*
 
