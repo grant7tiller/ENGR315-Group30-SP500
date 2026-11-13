@@ -169,7 +169,7 @@ These quick exploratory views show that the data supports each question. Fitted 
 
 ### Q2: How do P/E ratios differ between dividend-paying and non-dividend-paying companies?
 
-We completed Q2 using the S&P 500 dataset and the methods described above. Out of 503 companies, 458 had a usable positive P/E ratio and a nonnegative dividend yield. We grouped companies by whether Dividend Yield was greater than zero.
+We completed Q2 using the S&P 500 dataset and the methods described above. Out of 503 companies, 458 had a usable positive P/E ratio and a nonnegative dividend yield. We grouped companies by whether their Dividend Yield was greater than zero.
 
 | Measurement | Pays dividend | No dividend |
 |---|---:|---:|
@@ -179,7 +179,7 @@ We completed Q2 using the S&P 500 dataset and the methods described above. Out o
 | Standard deviation | 34.522 | 610.315 |
 | IQR | 15.485 | 27.317 |
 
-For the Welch t-test, the null hypothesis was that the two groups have the same population mean P/E ratio. The alternative was that the means are different. We used a significance level of 0.05.
+For the Welch t-test, the null hypothesis was that the two groups have the same population mean P/E ratio. Our alternative would be for the the means to be different. We also used a significance level of 0.05.
 
 - **Welch t-test:** t = -1.3764, p = 0.172672. We fail to reject the null hypothesis because p is greater than 0.05. This test did not find a statistically significant difference in the group means.
 - **Mann–Whitney U test:** U = 11901, p = 0.00612574. This test found a statistically significant difference in the groups' P/E distributions or ranks.
@@ -187,7 +187,7 @@ For the Welch t-test, the null hypothesis was that the two groups have the same 
 
 The median P/E was lower for dividend-paying companies (22.473 versus 27.190). The mean for non-dividend-paying companies was much higher, but its standard deviation was also very large. A few extreme P/E values in that group had a strong effect on the mean. This helps explain why the Welch test and Mann–Whitney test reached different significance decisions.
 
-**Figure 1. P/E ratios by dividend status.** Boxplots compare the two groups using a logarithmic y-axis. The non-dividend group has a higher median and several especially large outliers.
+**Figure 1. P/E ratios by dividend status.** Boxplots compare the two groups using a logarithmic y-axis. The non-dividend group has a higher median and several especially larger outliers.
 
 ![P/E boxplots by dividend status](figures/q2_pe_boxplot.png)
 
@@ -232,7 +232,7 @@ Saved figures/q2_log_pe_histogram.png
 
 ## Conclusions
 
-For Q2, dividend-paying companies had a lower median P/E ratio than non-dividend-paying companies in this dataset. The Welch t-test did not show a significant difference in mean P/E, while the Mann–Whitney test did indicate a difference between the groups. Because the non-dividend group contains some extreme values and the group sizes are unequal, we should be careful about interpreting their means. Our results suggest a relationship between dividend status and P/E ratios, but they do not show that paying a dividend causes a company's valuation to change.
+For Q2, dividend-paying companies had a lower median P/E ratio than non-dividend-paying companies in this dataset. The Welch t-test did not show a significant difference in mean P/E, while the Mann–Whitney test did indicate a difference between the groups. Because the non-dividend group contains some extreme values and the group sizes are unequal, we should be careful about interpreting their means. Our results suggest that there is a relationship between dividend status and P/E ratios, but they do not show that paying a dividend causes a company's valuation to change.
 
 We have completed one question/method pair for Phase II. Questions Q3 and Q4 are planned for the final project and have not yet been analyzed with the full proposed methods.
 
