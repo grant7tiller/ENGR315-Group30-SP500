@@ -167,15 +167,86 @@ These quick exploratory views show that the data supports each question. Fitted 
 
 ## Results (Answers to the Questions)
 
-*To be completed in a later phase.*
+### Q2: How do P/E ratios differ between dividend-paying and non-dividend-paying companies?
+
+We completed Q2 using the S&P 500 dataset and the methods described above. Out of 503 companies, 458 had a usable positive P/E ratio and a nonnegative dividend yield. We grouped companies by whether Dividend Yield was greater than zero.
+
+| Measurement | Pays dividend | No dividend |
+|---|---:|---:|
+| Number of companies | 380 | 78 |
+| Mean P/E | 28.928 | 124.077 |
+| Median P/E | 22.473 | 27.190 |
+| Standard deviation | 34.522 | 610.315 |
+| IQR | 15.485 | 27.317 |
+
+For the Welch t-test, the null hypothesis was that the two groups have the same population mean P/E ratio. The alternative was that the means are different. We used a significance level of 0.05.
+
+- **Welch t-test:** t = -1.3764, p = 0.172672. We fail to reject the null hypothesis because p is greater than 0.05. This test did not find a statistically significant difference in the group means.
+- **Mann–Whitney U test:** U = 11901, p = 0.00612574. This test found a statistically significant difference in the groups' P/E distributions or ranks.
+- **Effect sizes:** Cohen's d = -0.376 and rank-biserial correlation = -0.197. The negative signs indicate lower P/E values for dividend-paying companies using our group order.
+
+The median P/E was lower for dividend-paying companies (22.473 versus 27.190). The mean for non-dividend-paying companies was much higher, but its standard deviation was also very large. A few extreme P/E values in that group had a strong effect on the mean. This helps explain why the Welch test and Mann–Whitney test reached different significance decisions.
+
+**Figure 1. P/E ratios by dividend status.** Boxplots compare the two groups using a logarithmic y-axis. The non-dividend group has a higher median and several especially large outliers.
+
+![P/E boxplots by dividend status](figures/q2_pe_boxplot.png)
+
+**Figure 2. Distribution of log(P/E) by dividend status.** The histograms show the distributions after taking the natural log of P/E, which makes the wide range of values easier to view. The bars are company counts, and the dividend-paying group has many more companies.
+
+![Histogram of log P/E by dividend status](figures/q2_log_pe_histogram.png)
+
+### Running the Q2 Python code
+
+Keep `Q2 Dividends.py` in the main project folder, with the CSV saved at `data/constituents-financials.csv`. Install the required packages if needed (`numpy`, `pandas`, `scipy`, and `matplotlib`). Open a terminal in the main project folder and run:
+
+```bash
+python "Q2 Dividends.py"
+```
+
+The program prints the statistics and test results, then saves both PNG graphs in the `figures` folder.
+
+### Command-line output from Q2
+
+```text
+Q2: Dividend status compared with P/E ratio
+Total companies in CSV: 503
+Companies used after filtering: 458
+
+                           Pays dividend    No dividend
+Number of companies:                 380             78
+Mean P/E:                         28.928        124.077
+Median P/E:                       22.473         27.190
+Standard deviation:               34.522        610.315
+IQR:                              15.485         27.317
+
+Mean difference (payers - nonpayers): -95.149
+Welch t-test: t = -1.3764, p = 0.172672
+Mann-Whitney: U = 11901.000, p = 0.00612574
+Cohen's d = -0.376
+Rank-biserial correlation = -0.197
+Welch conclusion: Fail to reject H0; no significant mean difference found.
+
+Saved figures/q2_pe_boxplot.png
+Saved figures/q2_log_pe_histogram.png
+```
 
 ## Conclusions
 
-*To be completed in a later phase.*
+For Q2, dividend-paying companies had a lower median P/E ratio than non-dividend-paying companies in this dataset. The Welch t-test did not show a significant difference in mean P/E, while the Mann–Whitney test did indicate a difference between the groups. Because the non-dividend group contains some extreme values and the group sizes are unequal, we should be careful about interpreting their means. Our results suggest a relationship between dividend status and P/E ratios, but they do not show that paying a dividend causes a company's valuation to change.
+
+We have completed one question/method pair for Phase II. Questions Q3 and Q4 are planned for the final project and have not yet been analyzed with the full proposed methods.
 
 ## Actions That Need to Be Completed
 
-*To be completed in a later phase. This will be a checklist of every step needed to reproduce the project, with any issues the group faced on each step.*
+- [x] Select the S&P 500 dataset and define the three project questions.
+- [x] Load and filter the dataset for Q2.
+- [x] Calculate group statistics, run the statistical tests, and save Q2 graphs.
+- [x] Document Q2 results, figures, conclusions, and run instructions in the README.
+- [ ] Commit the Q2 Python file, updated README, and two new graphs to the shared GitHub repository.
+- [ ] Complete Q3: company size versus proximity to the 52-week high.
+- [ ] Complete Q4: earnings per share versus share price.
+- [ ] Update the final report, presentation, and demonstration after all three questions are complete.
+
 
 ## References / Source Files
 
