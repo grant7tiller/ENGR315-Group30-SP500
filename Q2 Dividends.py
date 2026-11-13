@@ -21,6 +21,7 @@ FIG_DIR = os.path.join(BASE_DIR, "figures")
 data = pd.read_csv(DATA_PATH)
 total_companies = len(data)
 
+
 # Remove rows without a usable P/E ratio or dividend yield.
 # P/E <= 0 means the company is not profitable, so its P/E is not meaningful.
 data["Price/Earnings"] = pd.to_numeric(data["Price/Earnings"], errors="coerce")
