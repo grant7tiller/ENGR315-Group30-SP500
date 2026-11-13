@@ -189,11 +189,11 @@ The median P/E was lower for dividend-paying companies (22.473 versus 27.190). T
 
 Figure 1. P/E ratios by dividend status. Boxplots compare the two groups using a logarithmic y-axis. The non-dividend group has a higher median and several especially large outliers.
 
-P/E boxplots by dividend status
+![P/E boxplots by dividend status](figures/q2_pe_boxplot.png)
 
 Figure 2. Distribution of log(P/E) by dividend status. The histograms show the distributions after taking the natural log of P/E, which makes the wide range of values easier to view. The bars are company counts, and the dividend-paying group has many more companies.
 
-Histogram of log P/E by dividend status
+![Histogram of log P/E by dividend status](figures/q2_log_pe_histogram.png)
 
 Running the Q2 Python code
 
