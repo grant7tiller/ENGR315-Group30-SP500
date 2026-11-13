@@ -43,7 +43,7 @@ A copy of the CSV is stored in [`data/`](data/) so the analysis can be reproduce
 
 Definitions of the financial terms used in this project:
 
-- **Share price (Price):** what one share of the company's stock costs
+- **Share price (Price):** what one share of the company's stock costs.
 - **Earnings per share (EPS):** the company's profit divided by its number of shares. A negative value means the company reported a loss.
 - **Price/Earnings ratio (P/E):** Price ÷ EPS, or how many dollars investors pay for each $1 of yearly earnings. A higher P/E usually means investors expect more growth.
 - **Dividend Yield:** yearly dividend per share ÷ share price, as a percentage. A yield of 0 means the company pays no dividend.
